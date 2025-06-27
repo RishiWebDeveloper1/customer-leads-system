@@ -14,20 +14,17 @@ const Login = () => {
         setError("");
 
         try {
-            console.log('1')
             const res = await axios.post(
                 `${import.meta.env.VITE_API_URL}/auth/login`,
                 { email, password }
             );
-            console.log('2')
             
             localStorage.setItem("token", res.data.token);
             
             const role = res.data.role;
-            console.log(role)
-            if (role === "SuperAdmin") {navigate("/admin"); console.log('3');}
-            else if (role === "SubAdmin") {navigate("/subadmin"); console.log('4');}
-            else if (role === "Agent") {navigate("/agent"); console.log('5');}
+            if (role === "SuperAdmin") {navigate("/admin");}
+            else if (role === "SubAdmin") {navigate("/subadmin");}
+            else if (role === "Agent") {navigate("/agent");}
             else navigate("/");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed");
