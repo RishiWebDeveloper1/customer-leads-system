@@ -8,7 +8,7 @@ const AllLeads = () => {
 
   const fetchLeads = async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/leads`, {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/leads`, {
         params: tagFilter ? { tag: tagFilter } : {},
       });
       setLeads(res.data);

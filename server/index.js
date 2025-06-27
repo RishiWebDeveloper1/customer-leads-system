@@ -15,9 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/leadsDB")
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log("MongoDB Error:", err));
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.error("❌ MongoDB Error:", err));
 
 const userSchema = new mongoose.Schema({
   email: String,

@@ -11,9 +11,9 @@ const UserForm = ({ user, onClose, onSubmit }) => {
 
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:3000/users-update/${user._id}`, { email });
+        await axios.put(`${import.meta.env.VITE_API_URL}/users-update/${user._id}`, { email });
     } else {
-        await axios.post(`http://localhost:3000/users-create`, { email, password });
+        await axios.post(`${import.meta.env.VITE_API_URL}/users-create`, { email, password });
     }
     
     onSubmit(); // refresh user list

@@ -12,7 +12,7 @@ const Admin = () => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get(`http://localhost:3000/users`);
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
             console.log("Fetched Users:", res.data);
             setUsers(res.data);
         } catch (err) {
@@ -22,7 +22,7 @@ const Admin = () => {
 
     const fetchLogs = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/users/logs");
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/users/logs`);
             console.log("Fetched Logs:", res.data);
             setActivityLogs(res.data);
         } catch (err) {

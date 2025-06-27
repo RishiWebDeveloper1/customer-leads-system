@@ -28,7 +28,7 @@ const SubAdmin = () => {
 
   const fetchLeads = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/leads");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/leads`);
       setLeads(res.data);
     } catch (err) {
       console.error("Failed to fetch leads", err);
@@ -46,10 +46,10 @@ const SubAdmin = () => {
       };
 
       if (isEdit) {
-        await axios.put(`http://localhost:3000/leads-update/${lead._id}`, payload);
+        await axios.put(`${import.meta.env.VITE_API_URL}/leads-update/${lead._id}`, payload);
         setMessage("✅ Lead updated successfully!");
       } else {
-        await axios.post("http://localhost:3000/leads-create", payload);
+        await axios.post(`${import.meta.env.VITE_API_URL}/leads-create`, payload);
         setMessage("✅ Lead created successfully!");
       }
 
@@ -73,7 +73,7 @@ const SubAdmin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this lead?")) return;
     try {
-      await axios.delete(`http://localhost:3000/leads-delete/${id}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/leads-delete/${id}`);
       setMessage("🗑️ Lead deleted");
       fetchLeads();
     } catch (err) {
