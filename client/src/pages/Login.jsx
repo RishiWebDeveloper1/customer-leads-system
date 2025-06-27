@@ -18,13 +18,13 @@ const Login = () => {
                 `${import.meta.env.VITE_API_URL}/auth/login`,
                 { email, password }
             );
-            
+
             localStorage.setItem("token", res.data.token);
-            
+
             const role = res.data.role;
-            if (role === "SuperAdmin") {navigate("/admin");}
-            else if (role === "SubAdmin") {navigate("/subadmin");}
-            else if (role === "Agent") {navigate("/agent");}
+            if (role === "SuperAdmin") { navigate("/admin"); }
+            else if (role === "SubAdmin") { navigate("/subadmin"); }
+            else if (role === "Agent") { navigate("/agent"); }
             else navigate("/");
         } catch (err) {
             setError(err.response?.data?.message || "Login failed");

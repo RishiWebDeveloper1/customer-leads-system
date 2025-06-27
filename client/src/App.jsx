@@ -1,11 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
-import SubAdmin from "./pages/SubAdmin"; 
-import Agent from "./pages/Agent"; 
+import SubAdmin from "./pages/SubAdmin";
+import Agent from "./pages/Agent";
 import Dashboard from "./pages/Dashboard";
 import Leads from "./pages/Leads";
 import Users from "./pages/Users";
+import './App.css'
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");

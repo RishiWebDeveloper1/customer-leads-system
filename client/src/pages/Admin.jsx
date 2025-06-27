@@ -61,24 +61,29 @@ const Admin = () => {
 
     return (
         <div className="admin-container">
-        <div style={{ padding: 20 }}>
-            <h2>Admin Panel</h2>
-            <button onClick={handleCreate}>+ Create User</button>
-            <UserTable users={users} onEdit={handleEdit} onDelete={handleDelete} />
-            {showForm && (
-                <UserForm
-                    user={selectedUser}
-                    onClose={() => setShowForm(false)}
-                    onSubmit={handleFormSubmit}
-                />
-            )}
-            <h3 style={{ marginTop: 40 }}>Activity Logs</h3>
-            <ul>
-                {activityLogs.map((log, index) => (
-                    <li key={index}>{log.message} — {new Date(log.timestamp).toLocaleString()}</li>
-                ))}
-            </ul>
-        </div>
+            <div className="logout-button-box">
+                <button className="logout-button" onClick={() => { localStorage.removeItem("token"); window.location.href = "/"; }}>
+                    Logout
+                </button>
+            </div>
+            <div style={{ padding: 20 }}>
+                <h2>Admin Panel</h2>
+                <button onClick={handleCreate}>+ Create User</button>
+                <UserTable users={users} onEdit={handleEdit} onDelete={handleDelete} />
+                {showForm && (
+                    <UserForm
+                        user={selectedUser}
+                        onClose={() => setShowForm(false)}
+                        onSubmit={handleFormSubmit}
+                    />
+                )}
+                <h3 style={{ marginTop: 40 }}>Activity Logs</h3>
+                <ul>
+                    {activityLogs.map((log, index) => (
+                        <li key={index}>{log.message} — {new Date(log.timestamp).toLocaleString()}</li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };

@@ -1,10 +1,7 @@
 const Dashboard = () => {
     return (
         <>
-            <div className="admin-page-box">
-
-            </div>
-
+            <h1>Click Here to logout</h1>
             <button onClick={() => { localStorage.removeItem("token"); window.location.href = "/"; }}>
                 Logout
             </button>
