@@ -1,0 +1,75 @@
+.subadmin-wrapper {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: #e2f4e9;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.lead-form button {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.lead-form button:hover {
+  background-color: #0056b3;
+}
+
+.leads-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.leads-table th,
+.leads-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.leads-table th {
+  background-color: #f4f4f4;
+}
+
+.leads-table button {
+  padding: 5px 8px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
